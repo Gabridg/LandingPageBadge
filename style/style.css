@@ -1,0 +1,636 @@
+/* General */
+::selection {
+    background-color: #0490d9;
+    color: black;
+}
+
+::-webkit-input-placeholder { /* WebKit/Blink */
+    color: #2c2c2c;
+    font-weight: bold;
+    font-style: italic;
+}
+
+::-webkit-input-placeholder { /* WebKit/Blink */
+    color: #2c2c2c;
+    font-weight: bold;
+    font-style: italic;
+  }
+
+/* Header / NavBar */
+header{
+    width: 100%;
+    position: fixed;
+    background-color: #fff;
+    z-index: 3;
+}
+
+#navMenu{
+    padding: 10px 8px;
+    background: rgb(26,115,141);
+    background: linear-gradient(90deg, rgba(26,115,141,1) 35%, rgba(235,188,52,1) 65%);
+    border-radius: 30px;
+}
+
+#navMenu .navLink{
+    font-weight: bold;
+}
+
+#navMenu .navLink a{
+    text-decoration: none;
+    margin: 15px 12px;
+    color: #000;
+}
+
+#goToLogin{
+    padding: 10px 8px;
+    background: rgb(26,115,141);
+    background: linear-gradient(90deg, rgba(26,115,141,1) 35%, rgba(235,188,52,1) 65%);
+    border-radius: 30px;
+}
+
+#goToLogin a{
+    text-decoration: none;
+    margin: 15px 12px;
+    color: #000;
+    font-weight: bold;
+}
+
+#navMenu .navLink a:hover{
+    color: #69ddff;
+}
+
+#goToLogin a:hover{
+    color: #69ddff;
+}
+
+/* Main */
+main{
+    padding-top: 100px;
+}
+
+/* Home */
+
+.presentation{
+    width: 50%;
+    margin-left: 25%;
+    text-align: center;
+}
+h3,h5{
+    line-height: normal;
+}
+
+.fa-square{
+    line-height: normal;
+}
+.presentation p{
+    font-weight: 500;
+}
+.carouselImgs{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.carouselImgs img{
+    width: calc(85% / 3);
+    margin-right: 4.7%;
+    height: 300px;
+}
+
+.carouselArrows{
+    margin-top: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+#left{
+    position: relative;
+    z-index: 0;
+    left: 0;
+    font-size: 35px;
+    color: #ebbc34;
+    border: 0px;
+    background-color: transparent
+}
+
+#right{
+    position: relative;
+    z-index: 0;
+    right:0;
+    font-size: 35px;
+    color: #ebbc34;
+    border: 0px;
+    background-color: transparent;
+}
+
+.active{
+    display: block;
+}
+
+.inactive{
+    display: none;
+}
+
+.carouselImgs img {
+    transition: opacity 0.3s ease-in-out, filter 0.3s ease-in-out; /* Aggiungi una transizione per l'opacità e il filtro */
+    filter: blur(3px) grayscale(100%); /* Applica uno sfocatura e rendi in bianco e nero iniziale */
+  }
+  
+.carouselImgs img.main-image {
+      opacity: 1; /* Assicurati che le immagini attive siano completamente visibili */
+      filter: blur(0) grayscale(0); /* Rimuovi lo sfocatura e il bianco e nero */
+    cursor: pointer;
+  }
+
+  .carouselImgs img.exploded {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8); /* sfondo nero trasparente */
+    z-index: 3; /* assicura che l'immagine sia in sovraimpressione sopra tutto il resto */
+    cursor: pointer; /* cursore per indicare che l'immagine è cliccabile */
+    object-fit: contain; /* mantiene l'immagine proporzionata all'interno del suo contenitore */
+    transition: transform 0.3s ease; /* transizione per l'ingrandimento dell'immagine */
+    padding: 50px 0;
+}
+
+.carouselImgs img.exploded:hover {
+    transform: scale(1.1); /* ingrandisce leggermente l'immagine al passaggio del mouse */
+}
+
+#closeButton{
+    color: #fff;
+    background-color: #063460;
+    border: 2px solid #ebbc34;
+    border-radius: 50%;
+    padding: 8px 8px;
+    cursor: pointer;
+    display: none;
+}
+#closeButton:hover{
+    background-color: #ebbc34;
+    border: 2px solid #063460;
+    color: #063460;
+}
+
+.activeButton{
+    display: block !important;
+    position: fixed;
+    top: 10px;
+    right: 30px;
+    z-index: 4;
+}
+
+/* Cosa sono gli OpenBadge */
+
+.video-container {
+    position: relative;
+    width: 100%;
+    height: 100vh; /* Altezza dello schermo intero, regola a piacere */
+    overflow: hidden;
+  }
+  
+  #video-background {
+    position: absolute;
+    top: 0;
+    left: 140px;
+    width: 450px;
+    height: 300px;
+    object-fit: cover; /* Copre l'intera area mantenendo le proporzioni */
+  }
+  
+  /* .content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white; 
+    text-align: center; 
+    z-index: 1;
+  } */
+
+/* Scopri GevoBadge */
+#leftList{
+    max-width: 35%;
+    text-align: center;
+}
+
+#leftList ul{
+    text-align: start;
+}
+
+#rightList{
+    text-align: center;
+}
+#rightList ul{
+    text-align: start;
+}
+
+.shadow{
+    box-shadow: 5px 10px rgba(0, 0, 0, 0.5) !important;
+}
+
+/* Form di contatto*/
+
+#contactsForm form input{
+    border-radius: 30px;
+    padding: 8px;
+    margin: 10px;
+    border: 2px solid black;
+}
+#contactsForm form textarea{
+    border-radius: 30px;
+    padding: 8px;
+    margin: 10px;
+    border: 2px solid black;
+    width: 100%;
+    max-height: 150px;
+    overflow: hidden;
+}
+
+#contact-us{
+    padding: 10px 8px;
+    background: rgb(26,115,141);
+    background: linear-gradient(90deg, rgba(26,115,141,1) 35%, rgba(235,188,52,1) 65%);
+    border-radius: 30px;
+    border: 0px;
+    font-weight: bold;
+}
+
+#contact-us:hover{
+    color: #69ddff;
+}
+
+#contactsPrivacy a{
+    font-weight: bold;
+    color: #000;
+    text-decoration: none;
+}
+
+#contactsPrivacy a:hover{
+    color: #063460;
+}
+
+#privacyPolicy{
+    cursor: pointer;
+    width: 15px;
+    height: 15px;
+}
+.custom-checkbox {
+    display: none;
+}
+
+.checkbox-label {
+    position: relative;
+    padding-left: 25px;
+    cursor: pointer;
+}
+
+.checkbox-label::before {
+    content: "";
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    position: absolute;
+    left: 0;
+    top: 1px;
+}
+
+.custom-checkbox:checked + .checkbox-label::before {
+    background-color: #ebbc34; /* Cambia il colore quando la checkbox è selezionata */
+}
+.custom-checkbox:checked + .checkbox-label::after {
+    content: "\2713"; /* Codice Unicode per la spunta */
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 4px;
+    font-size: 12px;
+    color: #063460; /* Colore della spunta */
+}
+
+.error-message{
+    color: #f00;
+    font-weight: bold;
+}
+
+#infoInput{
+    font-size: 10px;
+    font-weight: bold;
+    color: #aaa;
+}
+
+#contactsForm form .input-error{
+    border-radius: 30px;
+    padding: 8px;
+    margin: 10px;
+    border: 2px solid #f00;
+}
+
+#contactsForm form .input-error::placeholder{
+    color: #f00;
+}
+
+/* Modale sul form di contatto */
+
+.modal {
+    display: none; /* Nascondi per impostazione predefinita */
+    position: fixed; /* Posizionamento fisso */
+    z-index: 1; /* Z-index superiore */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto; /* Per lo scorrimento */
+    background-color: rgba(0,0,0,0.4); /* Sfondo semi-trasparente */
+  }
+  
+  /* Contenuto della finestra modale */
+  .modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* Centra verticalmente */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+  }
+  
+  /* Pulsante di chiusura */
+  .close {
+    color: #063460;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: #ebbc34;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+/* FOOTER */
+footer div p a{
+    text-decoration: none;
+    color: #000;
+    font-weight: bold;
+}
+footer div p{
+    text-decoration: none;
+    color: #000;
+    font-weight: bold;
+}
+
+.fa-square-facebook{
+    color: #3b5998;
+    background-color: #fff;
+    line-height: 32px;
+    height: 32px;
+    border-radius: 30px;
+}
+.fa-linkedin{
+    color: #0077b5;
+    background-color: #fff;
+    line-height: 33px;
+    height: 32px;
+    border-radius: 30px;
+}
+.fa-square-youtube{
+    color: #cc181e;
+    background-color: #fff;
+    line-height: 32px;
+    height: 32px;
+    border-radius: 30px;
+}
+
+.footer-info{
+    font-size: 12px;
+}
+
+footer div p a:hover{
+    color: #063460;
+}
+
+/* Animation & style 4 section */
+#openBadge{
+    background: rgb(26,115,141);
+    background: linear-gradient(90deg, rgba(26,115,141,1) 35%, rgba(235,188,52,1) 65%);
+    max-height: 500px;
+}
+#openBadge::selection {
+    background-color: #0077b5;
+}
+
+#validator{
+    background: rgb(26,115,141);
+    background: linear-gradient(90deg, rgba(26,115,141,1) 35%, rgba(235,188,52,1) 65%);
+}
+footer{
+    background: rgb(26,115,141);
+    background: linear-gradient(90deg, rgba(26,115,141,1) 35%, rgba(235,188,52,1) 65%);
+    padding: 15px 10px;
+}
+/* pop-up gestione e sile */
+.pop-up-imgs{
+    max-height: 80px;
+    max-width: 80px;
+}
+
+.popup {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+  }
+  
+  .popup-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    border-radius:30px;
+  }
+  
+  .close {
+    color: #063460;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: #ebbc34;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  /* Cookie banner */
+
+  .cookie-banner {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #063460;
+    padding: 20px;
+    box-shadow: 0px -2px 10px rgba(0, 0, 0, 0.1);
+    z-index: 9999;
+    display: none;
+    font-weight: bold;
+    color: #fff;
+}
+
+.banner-content {
+    max-width: 100%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+#close-cookie-banner {
+    background-color: #ebbc34;
+    color: #0077b5;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+#close-cookie-banner:hover{
+    background-color: #0077b5;
+    color: #ebbc34;
+}
+
+
+/* Responsive / Media Query */
+
+@media (max-width: 990px) { /* Tablet */
+    header nav {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    #navMenu {
+        margin-top: 1rem;
+        text-align: center;
+    }
+    #goToLogin {
+        margin-top: 1rem;
+        text-align: center;
+    }
+    main section {
+        padding: 1rem;
+    }
+    .carouselImgs img {
+        width: 100%;
+        height: 500px;
+    }
+    .carouselArrows {
+        display: flex;
+        justify-content: space-between;
+    }
+    .carouselArrows button {
+        font-size: 1.5rem;
+    }
+    #leftList, #rightList {
+        width: 100%;
+        margin-top: 1rem;
+    }
+    #contactsForm {
+        margin-top: 1rem;
+    }
+
+    #logo{
+        width: 200px;
+    }
+    #burgerMenu {
+        display: block;
+        border: 0px;
+    }
+    #menuBtn{
+        background-color: #ebbc34;
+        color: #063460;
+        border: 2px solid #063460;
+        border-radius: 30px;
+    }
+    #burgerMenu {
+        position: relative;
+    }
+    
+    #subMenu {
+        position: absolute;
+        top: 115%;
+        right: -7px;
+        background-color: #ccc;
+        border: 1px solid #ccc;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        z-index: 1000;
+    }
+    
+    .navLink {
+        padding: 10px;
+    }
+     
+    .navLink a{
+        text-decoration: none;
+        color: #063460;
+    }
+    .navLink a:hover{
+        color: #ebbc34;
+    }
+    
+    /* Nascondi il menu quando non è aperto */
+    #navMenu.d-none {
+        display: none;
+    }
+
+    #navMenu {
+        display: none !important;
+    }
+    header nav {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+    #goToLogin {
+        margin-top: 1rem;
+        text-align: center;
+        display: none;
+    }
+    main section {
+        padding: 1rem;
+    }
+    .carouselImgs img {
+        width: 100%;
+        height: auto;
+    }
+    .carouselArrows {
+        display: flex;
+        justify-content: space-between;
+    }
+    .carouselArrows button {
+        font-size: 1.5rem;
+    }
+    #leftList, #rightList {
+        width: 100%;
+        margin-top: 1rem;
+    }
+    #contactsForm {
+        margin-top: 1rem;
+    }
+    #contactsForm form textarea{
+        width: 93% !important;
+        height: 90px;
+    }
+}
