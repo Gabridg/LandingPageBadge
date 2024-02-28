@@ -65,7 +65,7 @@ header{
 
 /* Main */
 main{
-    padding-top: 100px;
+    padding-top: 110px;
 }
 
 /* Home */
@@ -235,6 +235,12 @@ h3,h5{
 }
 
 /* Form di contatto*/
+#infoMail{
+    width: 100%;
+    background-color: #98FB98;
+    font-weight: bold;
+}
+
 
 #contactsForm form input{
     border-radius: 30px;

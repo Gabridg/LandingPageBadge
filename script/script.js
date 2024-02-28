@@ -292,13 +292,6 @@ document.addEventListener('DOMContentLoaded', function () {
             agency.classList.remove('input-error');
         }
 
-        if (tel.value.trim() === '') {
-            errorMessages += 'Il campo Telefono è obbligatorio.<br>';
-            tel.classList.add('input-error');
-        } else {
-            tel.classList.remove('input-error');
-        }
-
         if (message.value.trim() === '') {
             errorMessages += 'Il campo Messaggio è obbligatorio.<br>';
             message.classList.add('input-error');
@@ -346,5 +339,22 @@ document.addEventListener('DOMContentLoaded', function () {
         if (event.target == modal) {
             modal.style.display = "none";
         }
+    }
+
+
+    //  Messaggio di errore o riuscita di invio email
+    const params = new URLSearchParams(window.location.search);
+    const success = params.get('success');
+
+    // Mostra un messaggio di conferma verde o di errore rosso a seconda del valore del parametro 'success'
+    if (success === 'true') {
+        // Se l'invio ha avuto successo, mostra un messaggio di conferma verde
+        document.getElementById('infoMail').innerHTML = 'Mail inviata con successo!';
+        document.getElementById('infoMail').style.color = 'green';
+    } else if (success === 'false') {
+        // Se l'invio ha fallito, mostra un messaggio di errore rosso
+        document.getElementById('infoMail').innerHTML = 'La mail non può essere inviata a causa di un errore';
+        document.getElementById('infoMail').style.color = '#f00e0e';
+        document.getElementById('infoMail').style.backgroundColor = '#ff795d';
     }
 });
