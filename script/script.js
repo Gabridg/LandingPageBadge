@@ -349,12 +349,19 @@ document.addEventListener('DOMContentLoaded', function () {
     // Mostra un messaggio di conferma verde o di errore rosso a seconda del valore del parametro 'success'
     if (success === 'true') {
         // Se l'invio ha avuto successo, mostra un messaggio di conferma verde
-        document.getElementById('infoMail').innerHTML = 'Mail inviata con successo!';
+        document.getElementById('infoMail').innerHTML = 'Mail inviata con successo!    <span class="closeX">&times;</span>';
         document.getElementById('infoMail').style.color = 'green';
     } else if (success === 'false') {
         // Se l'invio ha fallito, mostra un messaggio di errore rosso
-        document.getElementById('infoMail').innerHTML = 'La mail non può essere inviata a causa di un errore';
+        document.getElementById('infoMail').innerHTML = 'La mail non può essere inviata a causa di un errore  <span class="closeX">&times;</span>';
         document.getElementById('infoMail').style.color = '#f00e0e';
         document.getElementById('infoMail').style.backgroundColor = '#ff795d';
     }
+
+    var closeX = document.getElementsByClassName('closeX')[0];
+    closeX.onclick = function(event){
+        var infoMail = document.getElementById('infoMail');
+        infoMail.style.display = "none";
+    }
+
 });

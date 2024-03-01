@@ -240,7 +240,13 @@ h3,h5{
     background-color: #98FB98;
     font-weight: bold;
 }
-
+.closeX{
+    position: absolute;
+    right: 30px;
+    top: 98px;
+    cursor: pointer;
+    font-size: 30px;
+}
 
 #contactsForm form input{
     border-radius: 30px;
@@ -619,6 +625,7 @@ footer{
     }
     .carouselImgs img {
         width: 100%;
+        filter: none;
         height: auto;
     }
     .carouselArrows {
@@ -638,5 +645,15 @@ footer{
     #contactsForm form textarea{
         width: 93% !important;
         height: 90px;
+    }
+
+    #video-background{
+        left: 0;
+        height: 250px !important;
+        width: 195px !important;
+    }
+    .video-container{
+        width: 200px;
+        height: 310px;
     }
 }

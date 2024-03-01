@@ -32,10 +32,12 @@ $mail->Port = 465;
 
 
 $mail->setFrom('gabri99.del@gmail.com', 'EBAfos Info');
-$mail->addAddress($email, $name . " " . $surname);
+$mail->addAddress('gabri99.del@gmail.com', $name . " " . $surname);
 
-$mail->Subject = "Richiesta di contatto dalla Landing Page GevoBadge dall'agenzia " . " " . $agency;
-$mail->Body = $message . " " . $email . " " . (isset($tel) ? $tel : "");
+$mail->Subject = "Richiesta di contatto dalla Landing Page GevoBadge dall'agenzia" . " " . $agency;
+$mail->Body =  $message . "\n\n" . 
+"Indirizzo e-mail di chi ha inviato la mail: " . $email . "\n" . 
+"Numero di telefono di chi ha inviato la mail (se presente): " . (isset($tel) ? $tel : "");
 
 if ($mail->send()) {
     // Se l'invio ha avuto successo, reindirizza all'index.html con un messaggio di conferma
