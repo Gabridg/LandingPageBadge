@@ -238,8 +238,8 @@ document.addEventListener('DOMContentLoaded', function () {
         if (!isColored) {
             // Se l'elemento non è colorato, coloralo
             elemento.style.backgroundColor = '#063460';
-            elemento.style.color = '#ebbc34';
-            elemento.style.border = '2px solid #ebbc34';
+            elemento.style.color = '#063460';
+            elemento.style.border = '2px solid #063460';
         } else {
             // Se l'elemento è già colorato, ripristina il colore predefinito
             elemento.style.backgroundColor = ''; // Reimposta il colore di sfondo al valore predefinito

@@ -1,7 +1,7 @@
 /* General */
 ::selection {
-    background-color: #0490d9;
-    color: black;
+    background-color: #063460;
+    color: #ebbc34;
 }
 
 ::-webkit-input-placeholder { /* WebKit/Blink */
@@ -22,13 +22,13 @@ header{
     position: fixed;
     background-color: #fff;
     z-index: 3;
+    border-bottom: 3px solid #ebbc34;
 }
 
 #navMenu{
     padding: 10px 8px;
-    background: rgb(26,115,141);
-    background: linear-gradient(90deg, rgba(26,115,141,1) 35%, rgba(235,188,52,1) 65%);
-    border-radius: 30px;
+    background-color: #063460;
+    border-radius: 10px;
 }
 
 #navMenu .navLink{
@@ -38,34 +38,36 @@ header{
 #navMenu .navLink a{
     text-decoration: none;
     margin: 15px 12px;
-    color: #000;
+    color: #fff;
+
 }
 
 #goToLogin{
-    padding: 10px 8px;
-    background: rgb(26,115,141);
-    background: linear-gradient(90deg, rgba(26,115,141,1) 35%, rgba(235,188,52,1) 65%);
-    border-radius: 30px;
+    background-color: #063460;
+    border-radius: 10px;
+    height: 44px;
 }
 
-#goToLogin a{
+#goToLogin {
     text-decoration: none;
     margin: 15px 12px;
-    color: #000;
+    color: #fff;
     font-weight: bold;
+    padding: 10px 8px;
 }
 
 #navMenu .navLink a:hover{
-    color: #69ddff;
+    color: #ebbc34;
 }
 
-#goToLogin a:hover{
-    color: #69ddff;
+#goToLogin:hover{
+    color: #ebbc34;
+    cursor: pointer;
 }
 
 /* Main */
 main{
-    padding-top: 110px;
+    padding-top: 145px;
 }
 
 /* Home */
@@ -266,11 +268,11 @@ h3,h5{
 
 #contact-us{
     padding: 10px 8px;
-    background: rgb(26,115,141);
-    background: linear-gradient(90deg, rgba(26,115,141,1) 35%, rgba(235,188,52,1) 65%);
-    border-radius: 30px;
+    background-color: #063460;
+    border-radius: 10px;
     border: 0px;
     font-weight: bold;
+    color: #fff;
 }
 
 #contact-us:hover{
@@ -403,30 +405,38 @@ footer div p{
     color: #3b5998;
     background-color: #fff;
     line-height: 32px;
-    height: 32px;
+    height: 31px;
     border-radius: 30px;
 }
 .fa-linkedin{
     color: #0077b5;
     background-color: #fff;
-    line-height: 33px;
-    height: 32px;
+    line-height: 30px;
+    height: 29px;
     border-radius: 30px;
 }
 .fa-square-youtube{
     color: #cc181e;
     background-color: #fff;
     line-height: 32px;
-    height: 32px;
+    height: 31px;
     border-radius: 30px;
 }
 
 .footer-info{
     font-size: 12px;
 }
+.footer-info a{
+    color: #000;
+    text-decoration: none;
+    font-weight: bold;
+}
+.footer-info a:hover{
+    color: #ebbc34;
+}
 
 footer div p a:hover{
-    color: #063460;
+    color: #ebbc34;
 }
 
 /* Animation & style 4 section */
@@ -444,8 +454,7 @@ footer div p a:hover{
     background: linear-gradient(90deg, rgba(26,115,141,1) 35%, rgba(235,188,52,1) 65%);
 }
 footer{
-    background: rgb(26,115,141);
-    background: linear-gradient(90deg, rgba(26,115,141,1) 35%, rgba(235,188,52,1) 65%);
+    background-color: #063460;
     padding: 15px 10px;
 }
 /* pop-up gestione e sile */
@@ -524,7 +533,13 @@ footer{
     background-color: #0077b5;
     color: #ebbc34;
 }
-
+.logo-gevo{
+    width: 100px;
+    height: 80px;
+}
+.logo-gevo img{
+    height: 80px;
+}
 
 /* Responsive / Media Query */
 
@@ -571,9 +586,9 @@ footer{
         border: 0px;
     }
     #menuBtn{
-        background-color: #ebbc34;
-        color: #063460;
-        border: 2px solid #063460;
+        background: rgb(26,115,141);
+        background: linear-gradient(90deg, rgba(26,115,141,1) 35%, rgba(235,188,52,1) 65%);
+        border: 1px solid #fff;
         border-radius: 30px;
     }
     #burgerMenu {
@@ -584,7 +599,8 @@ footer{
         position: absolute;
         top: 115%;
         right: -7px;
-        background-color: #ccc;
+        background: rgb(26,115,141);
+        background: linear-gradient(90deg, rgba(26,115,141,1) 35%, rgba(235,188,52,1) 65%);
         border: 1px solid #ccc;
         box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
         z-index: 1000;
@@ -596,10 +612,11 @@ footer{
      
     .navLink a{
         text-decoration: none;
-        color: #063460;
+        color: #2c2c2c;
+        font-weight: bold;
     }
     .navLink a:hover{
-        color: #ebbc34;
+        color: #0490d9;
     }
     
     /* Nascondi il menu quando non è aperto */
