@@ -1,6 +1,8 @@
 document.addEventListener('DOMContentLoaded', function () {
   // Carosello Logic
     const carouselImgs = document.querySelectorAll('.carouselImgs img');
+    const dots = document.querySelectorAll('.dots button');
+    const innerDots = document.querySelectorAll('.dots button i');
     const totalImagesMobile = 6; // Numero di immagini in modalità mobile
     const totalImagesDesktop = 8; // Numero di immagini in modalità desktop
     const visibleImagesMobile = 1; // Numero di immagini visibili in modalità mobile
@@ -26,6 +28,7 @@ document.addEventListener('DOMContentLoaded', function () {
             img.classList.add('inactive');
           }
         });
+        updateDots();
       }
 
     function getVisibleImages() {
@@ -43,6 +46,7 @@ document.addEventListener('DOMContentLoaded', function () {
             currentIndex = 0;
         }
         updateCarousel();
+        updateDots();
     }
 
     function startAutoScroll() {
@@ -57,28 +61,46 @@ document.addEventListener('DOMContentLoaded', function () {
         stopAutoScroll();
         startAutoScroll();
     }
-
-    document.getElementById('left').addEventListener('click', () => {
-        if (currentIndex > 0) {
-            currentIndex--;
-        } else {
-            // Se siamo alla prima immagine e viene premuta la freccia sinistra, vai all'ultima immagine
-            currentIndex = getTotalImages() - getVisibleImages();
-        }
-        updateCarousel();
-        restartAutoScroll();
+    dots.forEach((dot, index) => {
+        dot.addEventListener('click', () => {
+          currentIndex = index;
+          updateCarousel();
+          updateDots();
+        });
     });
+    function updateDots() {
+        innerDots.forEach((iDot, index) => {
+          if (index === currentIndex) {
+            iDot.classList.add('active-dot');
+          } else {
+            iDot.classList.remove('active-dot');
+          }
+        });
+      }
+    // document.getElementById('left').addEventListener('click', () => {
+    //     if (currentIndex > 0) {
+    //         currentIndex--;
+    //     } else {
+    //         // Se siamo alla prima immagine e viene premuta la freccia sinistra, vai all'ultima immagine
+    //         currentIndex = getTotalImages() - getVisibleImages();
+    //     }
+    //     updateCarousel();
+    //     restartAutoScroll();
+    // });
 
-    document.getElementById('right').addEventListener('click', () => {
-        if (currentIndex < getTotalImages() - getVisibleImages()) {
-            currentIndex++;
-        } else {
-            // Se l'ultima immagine è attiva, riavvia il ciclo
-                currentIndex = 0;
-        }
-        updateCarousel();
-        restartAutoScroll();
-    });
+    // document.getElementById('right').addEventListener('click', () => {
+    //     if (currentIndex < getTotalImages() - getVisibleImages()) {
+    //         currentIndex++;
+    //     } else {
+    //         // Se l'ultima immagine è attiva, riavvia il ciclo
+    //             currentIndex = 0;
+    //     }
+    //     updateCarousel();
+    //     restartAutoScroll();
+    // });
+
+    updateCarousel();
+        updateDots();
 
     // Avvia lo scorrimento automatico quando la pagina si carica
     startAutoScroll();
