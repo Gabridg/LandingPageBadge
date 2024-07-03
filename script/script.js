@@ -77,27 +77,6 @@ document.addEventListener('DOMContentLoaded', function () {
           }
         });
       }
-    // document.getElementById('left').addEventListener('click', () => {
-    //     if (currentIndex > 0) {
-    //         currentIndex--;
-    //     } else {
-    //         // Se siamo alla prima immagine e viene premuta la freccia sinistra, vai all'ultima immagine
-    //         currentIndex = getTotalImages() - getVisibleImages();
-    //     }
-    //     updateCarousel();
-    //     restartAutoScroll();
-    // });
-
-    // document.getElementById('right').addEventListener('click', () => {
-    //     if (currentIndex < getTotalImages() - getVisibleImages()) {
-    //         currentIndex++;
-    //     } else {
-    //         // Se l'ultima immagine è attiva, riavvia il ciclo
-    //             currentIndex = 0;
-    //     }
-    //     updateCarousel();
-    //     restartAutoScroll();
-    // });
 
     updateCarousel();
         updateDots();
